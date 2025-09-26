@@ -60,9 +60,8 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
 
 ### 4. Estrutura do Projeto
 
-|-- SPDadosCriminais_2025.csv   # Arquivo de dados brutos (fonte)  
 |-- DadosCriminais_Tratados.csv # Arquivo de saída (gerado pelo script)  
-|-- seu_script.py               # Script principal do ETL  
+|-- script_etl.py               # Script principal do ETL  
 |-- README.md                   # Documentação do projeto  
 
 ### 5. Próximos Passos
