@@ -55,8 +55,8 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
     -   Ao final, apenas as colunas mais relevantes para a análise são mantidas e reordenadas, gerando um DataFrame final mais enxuto e organizado.
 
 #### 3.3. Carga (Load)
--   **Processo:** A função `carregar_dados` pega o DataFrame transformado e o salva em um novo arquivo.
--   **Destino:** Um novo arquivo CSV chamado `DadosCriminais_Tratados.csv`, codificado em `utf-8-sig` para garantir a compatibilidade com acentos e caracteres especiais em softwares como o Excel.
+-   **Processo:** A função `carregar_dados_bigquery` pega o DataFrame transformado e o envia diretamente para o Google BigQuery.
+-   **Destino:** Dentro do Google BigQuery o DataFrame é enviado para o projeto `projetointegrador4-473718`, dentro do projeto existe um conjunto de dados chamado `dados_ssp`, e, por fim, uma tabela `dados_2025`.
 
 ### 4. Estrutura do Projeto
 
@@ -66,9 +66,8 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
 
 ### 5. Próximos Passos
 O desenvolvimento deste projeto continua, com os seguintes objetivos em mente:
--   [ ] **Automatizar a Extração:** Criar um script para buscar os dados mais recentes diretamente do portal da Secretaria de Segurança Pública (SSP), eliminando a necessidade de download manual.
--   [ ] **Migrar para um Banco de Dados:** Substituir a carga em um arquivo CSV pela inserção dos dados em um banco de dados relacional (como PostgreSQL) ou não-relacional.
 -   [ ] **Visualização de Dados:** Utilizar os dados tratados para criar um dashboard interativo (em Power BI, por exemplo) para a visualização dos insights.
+-   [ ] **Validação:** Validar junto aos Stakeholders se a proposta atendo os requisitos necessários.
 
 ### 6. Autores
 - Débora Kocks Nogueira
