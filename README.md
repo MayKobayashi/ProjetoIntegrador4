@@ -20,21 +20,21 @@ Este projeto foi desenvolvido para a disciplina de "Projeto Integrador 4" e tem 
 
 O foco da análise são as ocorrências registradas nas Delegacias de Defesa da Mulher (DDM) dos municípios de **Sorocaba** e **Votorantim**, visando gerar insights que possam ser utilizados em futuras visualizações e estudos sobre o tema.
 
-Atualmente, o projeto consiste em um script em Python que realiza todo o processo de ETL a partir de um arquivo CSV local.
+Atualmente, o projeto consiste em um script em Python que realiza todo o processo de ETL a partir de download de arquivos do site da Secretaria de Segurança Pública do Estado de São Paulo.
 
 **Status do Projeto:** `Em desenvolvimento`
 
 ### 2. Tecnologias Utilizadas
 - **Linguagem:** Python 3.9+
 - **Biblioteca Principal:** Pandas
-- **Ambiente de Desenvolvimento:** Jupyter Notebook / Google Colab (inicialmente), VS Codium
+- **Ambiente de Desenvolvimento:** Google Colab
 
 ### 3. O Processo ETL
 O script é dividido nas três etapas clássicas do ETL:
 
 #### 3.1. Extração (Extract)
--   **Fonte de Dados:** Um arquivo local no formato CSV (`SPDadosCriminais_2025.csv`).
--   **Processo:** A função `extrair_dados` utiliza a biblioteca Pandas para ler o arquivo CSV e carregá-lo em um DataFrame, que é a estrutura de dados principal usada nas etapas seguintes.
+-   **Fonte de Dados:** Planilhas Excel baixadas diretamente do site da Secretaria de Segurança Pública do Estado de São Paulo.
+-   **Processo:** A função `extrair_e_consolidar_dados` utiliza a biblioteca Pandas para ler o arquivo e carregá-lo em um DataFrame, que é a estrutura de dados principal usada nas etapas seguintes.
 
 #### 3.2. Transformação (Transform)
 Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enriquecidos. A função `transformar_dados` realiza as seguintes operações:
@@ -46,6 +46,8 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
 2.  **Limpeza e Formatação:**
     -   Converte a coluna `DATA_OCORRENCIA_BO` de texto para o formato `datetime`. Registros com datas inválidas são descartados.
     -   Valores nulos (`NaN`) em colunas textuais importantes (`HORA_OCORRENCIA_BO`, `BAIRRO`, etc.) são preenchidos com o valor padrão "Não Informado".
+    -   Nome das colunas são formatados para letra minúscula e alguns nomes ajustados para melhor entendimento do usuário.
+    -   Valores são formatados para ficarem somente com a primeira letra maiúscula.
 
 3.  **Enriquecimento de Dados (Criação de Novas Features):**
     -   Cria a coluna `MES_OCORRENCIA` extraindo o mês da data da ocorrência.
