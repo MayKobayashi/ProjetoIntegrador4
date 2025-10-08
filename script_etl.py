@@ -19,7 +19,7 @@ import os
 def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     """
     Recebe uma lista de URLs de arquivos Excel, baixa todos,
-    lê e consolida em um único DataFrame.
+    lê todas as abas e consolida em um único DataFrame.
     """
     print(f"Iniciando download de {len(lista_de_links)} arquivos.")
 
@@ -45,9 +45,15 @@ def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     for arquivo in os.listdir(pasta_downloads):
         if arquivo.endswith('.xlsx'):
             caminho_completo = os.path.join(pasta_downloads, arquivo)
-            print(f"Lendo arquivo: {arquivo}")
-            df_temp = pd.read_excel(caminho_completo)
-            lista_dfs.append(df_temp)
+            print(f"Lendo todas as abas do arquivo: {arquivo}")
+
+            # Lê todas as abas do arquivo Excel para um dicionário de DataFrames
+            dicionario_de_abas = pd.read_excel(caminho_completo, sheet_name=None)
+
+            # Itera sobre cada aba (DataFrame) lida do arquivo
+            for nome_aba, df_aba in dicionario_de_abas.items():
+                print(f" -> Processando aba: '{nome_aba}'")
+                lista_dfs.append(df_aba)
 
     if not lista_dfs:
         print("Nenhuma planilha lida.")
@@ -83,7 +89,7 @@ def transformar_dados(df):
     df_filtrado['DATA_OCORRENCIA_BO'] = pd.to_datetime(df_filtrado['DATA_OCORRENCIA_BO'], format='%d/%m/%Y', errors='coerce')
     df_filtrado.dropna(subset=['DATA_OCORRENCIA_BO'], inplace=True)
 
-    colunas_para_preencher = ['DESC_PERIODO', 'DESCR_CONDUTA', 'BAIRRO', 'LOGRADOURO']
+    colunas_para_preencher = ['DESC_PERIODO', 'BAIRRO', 'LOGRADOURO']
     for coluna in colunas_para_preencher:
         df_filtrado[coluna] = df_filtrado[coluna].fillna('Não Informado')
 
@@ -97,34 +103,76 @@ def transformar_dados(df):
     df_filtrado['DIA_SEMANA'] = df_filtrado['DIA_SEMANA_EN'].map(mapa_dias)
     df_filtrado.drop(columns=['DIA_SEMANA_EN'], inplace=True)
 
+    # --- RENOMEAR COLUNAS ---
+    mapa_renomear = {
+        'NOME_MUNICIPIO': 'nome_municipio',
+        'NOME_DELEGACIA': 'nome_delegacia',
+        'ANO_ESTATISTICA': 'ano_ocorrencia',
+        'MES_OCORRENCIA': 'mes_ocorrencia',
+        'DATA_OCORRENCIA_BO': 'data_ocorrencia_bo',
+        'HORA_OCORRENCIA_BO': 'hora_ocorrencia_bo',
+        'DESC_PERIODO': 'periodo_ocorrencia',
+        'DIA_SEMANA': 'dia_semana',
+        'DESCR_SUBTIPOLOCAL': 'local_ocorrencia',
+        'BAIRRO': 'bairro',
+        'LOGRADOURO': 'logradouro',
+        'LATITUDE': 'latitude',
+        'LONGITUDE': 'longitude',
+        'RUBRICA': 'artigo_ocorrencia',
+        'NATUREZA_APURADA': 'tipo_ocorrencia'
+    }
+    df_renomeado = df_filtrado.rename(columns=mapa_renomear)
+
+    # --- FORMATAR TEXTOS PARA "Title Case" ---
+    colunas_texto = df_renomeado.select_dtypes(include=['object']).columns
+    for coluna in colunas_texto:
+        # Pula a coluna de hora para não convertê-la em texto
+        if coluna == 'hora_ocorrencia_bo':
+            continue
+
+        df_renomeado[coluna] = df_renomeado[coluna].astype(str).str.title()
+        df_renomeado[coluna] = df_renomeado[coluna].str.replace('Nao Informado', 'Não Informado')
+        df_renomeado[coluna] = df_renomeado[coluna].str.replace('Nan', 'Não Informado')
+
     # --- BLOCO FINAL DE GARANTIA DOS TIPOS ---
     print("\nGarantindo os tipos de dados corretos antes da carga...")
 
     # Converte colunas que devem ser inteiros
-    for coluna in ['ANO_ESTATISTICA', 'MES_OCORRENCIA']:
-        if coluna in df_filtrado.columns:
-            df_filtrado[coluna] = pd.to_numeric(df_filtrado[coluna], errors='coerce')
-            df_filtrado.dropna(subset=[coluna], inplace=True)
-            df_filtrado[coluna] = df_filtrado[coluna].astype(int)
+    for coluna in ['ano_ocorrencia', 'mes_ocorrencia']:
+        if coluna in df_renomeado.columns:
+            df_renomeado[coluna] = pd.to_numeric(df_renomeado[coluna], errors='coerce')
+            df_renomeado.dropna(subset=[coluna], inplace=True)
+            df_renomeado[coluna] = df_renomeado[coluna].astype(int)
 
     # Converte colunas que devem ser de ponto flutuante (float)
-    for coluna in ['LATITUDE', 'LONGITUDE']:
-        if coluna in df_filtrado.columns:
-            # Primeiro, garante que a coluna é do tipo string para usar o .str
-            df_filtrado[coluna] = df_filtrado[coluna].astype(str)
+    for coluna in ['latitude', 'longitude']:
+        if coluna in df_renomeado.columns:
             # Substitui vírgula por ponto
-            df_filtrado[coluna] = df_filtrado[coluna].str.replace(',', '.', regex=False)
+            df_renomeado[coluna] = df_renomeado[coluna].astype(str).str.replace(',', '.', regex=False)
             # Converte para numérico
-            df_filtrado[coluna] = pd.to_numeric(df_filtrado[coluna], errors='coerce')
-    # --- FIM DO BLOCO FINAL ---
+            df_renomeado[coluna] = pd.to_numeric(df_renomeado[coluna], errors='coerce')
 
-    colunas_relevantes = [
-        'NOME_DELEGACIA', 'NOME_MUNICIPIO', 'DATA_OCORRENCIA_BO', 'HORA_OCORRENCIA_BO',
-        'DESC_PERIODO', 'DIA_SEMANA', 'MES_OCORRENCIA', 'ANO_ESTATISTICA', 'DESCR_SUBTIPOLOCAL', 'BAIRRO',
-        'LOGRADOURO', 'LATITUDE', 'LONGITUDE', 'RUBRICA', 'DESCR_CONDUTA', 'NATUREZA_APURADA'
+    # --- ORDENAR E SELECIONAR COLUNAS FINAIS ---
+    ordem_final_colunas = [
+        'nome_municipio',
+        'nome_delegacia',
+        'ano_ocorrencia',
+        'mes_ocorrencia',
+        'data_ocorrencia_bo',
+        'hora_ocorrencia_bo',
+        'periodo_ocorrencia',
+        'dia_semana',
+        'local_ocorrencia',
+        'bairro',
+        'logradouro',
+        'latitude',
+        'longitude',
+        'artigo_ocorrencia',
+        'tipo_ocorrencia',
     ]
-    colunas_existentes = [col for col in colunas_relevantes if col in df_filtrado.columns]
-    df_transformado = df_filtrado[colunas_existentes]
+    # Filtra para garantir que apenas colunas existentes sejam selecionadas
+    colunas_existentes = [col for col in ordem_final_colunas if col in df_renomeado.columns]
+    df_transformado = df_renomeado[colunas_existentes]
 
     print("Dados transformados com sucesso!")
     return df_transformado
@@ -147,7 +195,7 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
     client = bigquery.Client(project=project_id)
     print(f"\nConectado ao projeto '{project_id}'.")
 
-    # Usando o schema, em vez de autodetect
+    # Usamos o schema que definimos, em vez de autodetect
     job_config = bigquery.LoadJobConfig(
         schema=schema,
         write_disposition="WRITE_TRUNCATE",
@@ -166,22 +214,21 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
 # =============================================
 
 schema_definido = [
-    bigquery.SchemaField("NOME_DELEGACIA", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("NOME_MUNICIPIO", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("DATA_OCORRENCIA_BO", "DATE", mode="NULLABLE"),
-    bigquery.SchemaField("HORA_OCORRENCIA_BO", "TIME", mode="NULLABLE"),
-    bigquery.SchemaField("DESC_PERIODO", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("DIA_SEMANA", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("MES_OCORRENCIA", "INTEGER", mode="NULLABLE"),
-    bigquery.SchemaField("ANO_ESTATISTICA", "INTEGER", mode="NULLABLE"),
-    bigquery.SchemaField("DESCR_SUBTIPOLOCAL", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("BAIRRO", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("LOGRADOURO", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("LATITUDE", "FLOAT", mode="NULLABLE"),
-    bigquery.SchemaField("LONGITUDE", "FLOAT", mode="NULLABLE"),
-    bigquery.SchemaField("RUBRICA", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("DESCR_CONDUTA", "STRING", mode="NULLABLE"),
-    bigquery.SchemaField("NATUREZA_APURADA", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("nome_municipio", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("nome_delegacia", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("ano_ocorrencia", "INTEGER", mode="NULLABLE"),
+    bigquery.SchemaField("mes_ocorrencia", "INTEGER", mode="NULLABLE"),
+    bigquery.SchemaField("data_ocorrencia_bo", "DATE", mode="NULLABLE"),
+    bigquery.SchemaField("hora_ocorrencia_bo", "TIME", mode="NULLABLE"),
+    bigquery.SchemaField("periodo_ocorrencia", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("dia_semana", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("local_ocorrencia", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("bairro", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("logradouro", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("latitude", "FLOAT", mode="NULLABLE"),
+    bigquery.SchemaField("longitude", "FLOAT", mode="NULLABLE"),
+    bigquery.SchemaField("artigo_ocorrencia", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("tipo_ocorrencia", "STRING", mode="NULLABLE"),
 ]
 
 
@@ -233,12 +280,12 @@ if dados_consolidados is not None:
     dados_finais = transformar_dados(dados_consolidados)
 
     # 3. ETAPA DE DEBUG ANTES DA CARGA
-    if dados_finais is not None:
+    if dados_finais is not None and not dados_finais.empty:
         print("\n--- RAIO-X DO DATAFRAME FINAL ANTES DA CARGA ---")
         dados_finais.info()
 
         # Lista de colunas que DEVEM ser numéricas
-        colunas_para_verificar = ['MES_OCORRENCIA', 'ANO_ESTATISTICA', 'LATITUDE', 'LONGITUDE']
+        colunas_para_verificar = ['mes_ocorrencia', 'ano_ocorrencia', 'latitude', 'longitude']
         encontrar_valores_nao_numericos(dados_finais, colunas_para_verificar)
 
         print("\n--- FIM DO RAIO-X ---")
