@@ -60,13 +60,15 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
 
 ### 4. Estrutura do Projeto
 
-|-- DadosCriminais_Tratados.csv # Arquivo de saída (gerado pelo script)  
+|-- Referências                 # Pasta com arquivos utilizados como referência sobre o tema 
+|-- dados_tratados.csv          # Arquivo de saída (gerado pelo script e carregado no Google BigQuery)  
+|-- Problema_PI4.docx           # Documento com a descrição do problema   
 |-- script_etl.py               # Script principal do ETL  
 |-- README.md                   # Documentação do projeto  
 
 ### 5. Próximos Passos
 O desenvolvimento deste projeto continua, com os seguintes objetivos em mente:
--   [ ] **Visualização de Dados:** Utilizar os dados tratados para criar um dashboard interativo (em Power BI, por exemplo) para a visualização dos insights.
+-   [ ] **Visualização de Dados:** Aprimorar o dashboard que foi criado no Google LookerStudio, incluindo mais filtros e gráficos.
 -   [ ] **Validação:** Validar junto aos Stakeholders se a proposta atendo os requisitos necessários.
 
 ### 6. Autores
