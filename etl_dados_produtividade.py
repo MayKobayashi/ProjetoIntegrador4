@@ -19,7 +19,7 @@ import os
 def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     """
     Recebe uma lista de URLs de arquivos Excel, baixa todos,
-    lê todas as abas e consolida em um único DataFrame.
+    lê APENAS as abas desejadas e consolida em um único DataFrame.
     """
     print(f"Iniciando download de {len(lista_de_links)} arquivos.")
 
@@ -45,18 +45,24 @@ def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     for arquivo in os.listdir(pasta_downloads):
         if arquivo.endswith('.xlsx'):
             caminho_completo = os.path.join(pasta_downloads, arquivo)
-            print(f"Lendo todas as abas do arquivo: {arquivo}")
+            print(f"Lendo arquivo: {arquivo}")
 
             # Lê todas as abas do arquivo Excel para um dicionário de DataFrames
             dicionario_de_abas = pd.read_excel(caminho_completo, sheet_name=None)
 
             # Itera sobre cada aba (DataFrame) lida do arquivo
             for nome_aba, df_aba in dicionario_de_abas.items():
-                print(f" -> Processando aba: '{nome_aba}'")
-                lista_dfs.append(df_aba)
+
+                # Verifica se o nome da aba (removendo espaços) começa com o prefixo desejado
+                if nome_aba.strip().startswith('PRESOS E APREENDIDOS'):
+                    print(f" -> Processando aba: '{nome_aba}' (Corresponde ao filtro)")
+                    lista_dfs.append(df_aba)
+                else:
+                    # Aba ignorada pois não corresponde ao filtro
+                    print(f" -> Ignorando aba: '{nome_aba}'")
 
     if not lista_dfs:
-        print("Nenhuma planilha lida.")
+        print("Nenhuma planilha correspondente ao filtro foi lida.")
         return None
 
     # Concatena todos os DataFrames da lista em um só
@@ -77,51 +83,77 @@ def transformar_dados(df):
         return None
 
     # --- FILTRAGEM ---
-    delegacias_desejadas = ['DDM SOROCABA', 'DDM VOTORANTIM']
-    municipios_desejados = ['SOROCABA', 'VOTORANTIM']
-    df_filtrado = df[
-        (df['NOME_DELEGACIA'].str.upper().isin(delegacias_desejadas)) &
-        (df['NOME_MUNICIPIO'].str.upper().isin(municipios_desejados))
-    ].copy()
-    print(f"\nDados filtrados. {len(df_filtrado)} registros encontrados.")
+    if 'NOME_DELEGACIA' in df.columns and 'NOME_MUNICIPIO' in df.columns:
+        delegacias_desejadas = ['DDM SOROCABA', 'DDM VOTORANTIM']
+        municipios_desejados = ['SOROCABA', 'VOTORANTIM']
+        df_filtrado = df[
+            (df['NOME_DELEGACIA'].str.upper().isin(delegacias_desejadas)) &
+            (df['NOME_MUNICIPIO'].str.upper().isin(municipios_desejados))
+        ].copy()
+        print(f"\nDados filtrados. {len(df_filtrado)} registros encontrados.")
+    else:
+        print("Aviso: Colunas 'NOME_DELEGACIA' ou 'NOME_MUNICIPIO' não encontradas. Pulando filtragem.")
+        df_filtrado = df.copy()
+
 
     # --- LIMPEZA E TRANSFORMAÇÃO ---
-    df_filtrado['DATA_OCORRENCIA_BO'] = pd.to_datetime(df_filtrado['DATA_OCORRENCIA_BO'], format='%d/%m/%Y', errors='coerce')
-    df_filtrado.dropna(subset=['DATA_OCORRENCIA_BO'], inplace=True)
+    if 'DATA_OCORRENCIA_BO' in df_filtrado.columns:
+        df_filtrado['DATA_OCORRENCIA_BO'] = pd.to_datetime(df_filtrado['DATA_OCORRENCIA_BO'], format='%d/%m/%Y', errors='coerce')
+        df_filtrado.dropna(subset=['DATA_OCORRENCIA_BO'], inplace=True)
 
-    colunas_para_preencher = ['DESC_PERIODO', 'BAIRRO', 'LOGRADOURO']
+        df_filtrado['MES_OCORRENCIA'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.month
+        df_filtrado['ano_ocorrencia'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.year
+
+        df_filtrado['DIA_SEMANA_EN'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.day_name()
+        mapa_dias = {
+            'Monday': 'Segunda-feira', 'Tuesday': 'Terça-feira', 'Wednesday': 'Quarta-feira',
+            'Thursday': 'Quinta-feira', 'Friday': 'Sexta-feira', 'Saturday': 'Sábado', 'Sunday': 'Domingo'
+        }
+        df_filtrado['DIA_SEMANA'] = df_filtrado['DIA_SEMANA_EN'].map(mapa_dias)
+        df_filtrado.drop(columns=['DIA_SEMANA_EN'], inplace=True)
+    else:
+        print("Aviso: Coluna 'DATA_OCORRENCIA_BO' não encontrada. Cálculos de data serão pulados.")
+
+
+    colunas_para_preencher = ['DESCR_PERIODO', 'BAIRRO', 'LOGRADOURO', 'DESCR_PROFISSAO', 'DESCR_GRAU_INSTRUCAO']
     for coluna in colunas_para_preencher:
-        df_filtrado[coluna] = df_filtrado[coluna].fillna('Não Informado')
 
-    df_filtrado['MES_OCORRENCIA'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.month
-
-    df_filtrado['DIA_SEMANA_EN'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.day_name()
-    mapa_dias = {
-        'Monday': 'Segunda-feira', 'Tuesday': 'Terça-feira', 'Wednesday': 'Quarta-feira',
-        'Thursday': 'Quinta-feira', 'Friday': 'Sexta-feira', 'Saturday': 'Sábado', 'Sunday': 'Domingo'
-    }
-    df_filtrado['DIA_SEMANA'] = df_filtrado['DIA_SEMANA_EN'].map(mapa_dias)
-    df_filtrado.drop(columns=['DIA_SEMANA_EN'], inplace=True)
+        # Verifica se a coluna realmente existe no DataFrame antes de tentar modificá-la
+        if coluna in df_filtrado.columns:
+            df_filtrado[coluna] = df_filtrado[coluna].fillna('Não Informado')
+        else:
+            # Apenas avisa que a coluna do script não foi encontrada
+            print(f"Aviso: Coluna '{coluna}' não encontrada. Ignorando.")
 
     # --- RENOMEAR COLUNAS ---
     mapa_renomear = {
+        'NUM_BO': 'codigo_bo',
         'NOME_MUNICIPIO': 'nome_municipio',
         'NOME_DELEGACIA': 'nome_delegacia',
-        'ANO_ESTATISTICA': 'ano_ocorrencia',
         'MES_OCORRENCIA': 'mes_ocorrencia',
         'DATA_OCORRENCIA_BO': 'data_ocorrencia_bo',
         'HORA_OCORRENCIA_BO': 'hora_ocorrencia_bo',
-        'DESC_PERIODO': 'periodo_ocorrencia',
+        'DESCR_PERIODO': 'periodo_ocorrencia',
         'DIA_SEMANA': 'dia_semana',
         'DESCR_SUBTIPOLOCAL': 'local_ocorrencia',
         'BAIRRO': 'bairro',
         'LOGRADOURO': 'logradouro',
         'LATITUDE': 'latitude',
         'LONGITUDE': 'longitude',
-        'RUBRICA': 'artigo_ocorrencia',
-        'NATUREZA_APURADA': 'tipo_ocorrencia'
+        'NATUREZA_APURADA': 'tipo_ocorrencia',
+        'FLAG_FLAGRANTE': 'flagrante',
+        'DESCR_TIPO_PESSOA': 'natureza_autor',
+        'SEXO_PESSOA': 'sexo_autor',
+        'IDADE_PESSOA': 'idade_autor',
+        'COR_CURTIS': 'raca_autor',
+        'DESCR_PROFISSAO': 'profissao_autor',
+        'DESCR_GRAU_INSTRUCAO': 'escolaridade_autor'
     }
-    df_renomeado = df_filtrado.rename(columns=mapa_renomear)
+
+    # Filtra o mapa de renomeação para incluir apenas colunas que REALMENTE existem
+    mapa_renomear_valido = {k: v for k, v in mapa_renomear.items() if k in df_filtrado.columns}
+    print(f"\nColunas renomeadas: {list(mapa_renomear_valido.keys())}")
+    df_renomeado = df_filtrado.rename(columns=mapa_renomear_valido)
 
     # --- FORMATAR TEXTOS PARA "Title Case" ---
     colunas_texto = df_renomeado.select_dtypes(include=['object']).columns
@@ -138,11 +170,13 @@ def transformar_dados(df):
     print("\nGarantindo os tipos de dados corretos antes da carga...")
 
     # Converte colunas que devem ser inteiros
-    for coluna in ['ano_ocorrencia', 'mes_ocorrencia']:
+    colunas_inteiras = ['ano_ocorrencia', 'mes_ocorrencia', 'idade_autor']
+    for coluna in colunas_inteiras:
         if coluna in df_renomeado.columns:
             df_renomeado[coluna] = pd.to_numeric(df_renomeado[coluna], errors='coerce')
-            df_renomeado.dropna(subset=[coluna], inplace=True)
-            df_renomeado[coluna] = df_renomeado[coluna].astype(int)
+            df_renomeado[coluna] = df_renomeado[coluna].astype(pd.Int64Dtype())
+        else:
+             print(f"Aviso: Coluna de inteiro '{coluna}' não encontrada para conversão de tipo.")
 
     # Converte colunas que devem ser de ponto flutuante (float)
     for coluna in ['latitude', 'longitude']:
@@ -152,8 +186,16 @@ def transformar_dados(df):
             # Converte para numérico
             df_renomeado[coluna] = pd.to_numeric(df_renomeado[coluna], errors='coerce')
 
+    if 'hora_ocorrencia_bo' in df_renomeado.columns:
+        print("Convertendo 'hora_ocorrencia_bo' para objetos 'time'...")
+        horarios_dt = pd.to_datetime(df_renomeado['hora_ocorrencia_bo'], errors='coerce')
+
+        df_renomeado['hora_ocorrencia_bo'] = horarios_dt.dt.time
+        print("Conversão de hora concluída.")
+
     # --- ORDENAR E SELECIONAR COLUNAS FINAIS ---
     ordem_final_colunas = [
+        'codigo_bo',
         'nome_municipio',
         'nome_delegacia',
         'ano_ocorrencia',
@@ -167,11 +209,19 @@ def transformar_dados(df):
         'logradouro',
         'latitude',
         'longitude',
-        'artigo_ocorrencia',
         'tipo_ocorrencia',
+        'flagrante',
+        'natureza_autor',
+        'sexo_autor',
+        'idade_autor',
+        'raca_autor',
+        'profissao_autor',
+        'escolaridade_autor'
     ]
+
     # Filtra para garantir que apenas colunas existentes sejam selecionadas
     colunas_existentes = [col for col in ordem_final_colunas if col in df_renomeado.columns]
+    print(f"\nColunas finais que serão carregadas: {colunas_existentes}")
     df_transformado = df_renomeado[colunas_existentes]
 
     print("Dados transformados com sucesso!")
@@ -195,9 +245,14 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
     client = bigquery.Client(project=project_id)
     print(f"\nConectado ao projeto '{project_id}'.")
 
+    # Filtra o schema para carregar apenas as colunas que existem no DF final
+    nomes_colunas_df = list(df.columns)
+    schema_filtrado = [campo for campo in schema if campo.name in nomes_colunas_df]
+    print(f"Schema filtrado para {len(schema_filtrado)} colunas existentes no DataFrame.")
+
     # Usamos o schema que definimos, em vez de autodetect
     job_config = bigquery.LoadJobConfig(
-        schema=schema,
+        schema=schema_filtrado, # Usa o schema filtrado
         write_disposition="WRITE_TRUNCATE",
     )
 
@@ -214,6 +269,7 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
 # =============================================
 
 schema_definido = [
+    bigquery.SchemaField("codigo_bo", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("nome_municipio", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("nome_delegacia", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("ano_ocorrencia", "INTEGER", mode="NULLABLE"),
@@ -227,8 +283,14 @@ schema_definido = [
     bigquery.SchemaField("logradouro", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("latitude", "FLOAT", mode="NULLABLE"),
     bigquery.SchemaField("longitude", "FLOAT", mode="NULLABLE"),
-    bigquery.SchemaField("artigo_ocorrencia", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("tipo_ocorrencia", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("flagrante", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("natureza_autor", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("sexo_autor", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("idade_autor", "INTEGER", mode="NULLABLE"),
+    bigquery.SchemaField("raca_autor", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("profissao_autor", "STRING", mode="NULLABLE"),
+    bigquery.SchemaField("escolaridade_autor", "STRING", mode="NULLABLE")
 ]
 
 
@@ -266,10 +328,8 @@ def encontrar_valores_nao_numericos(df, colunas):
 
 # Lista manual com as URLs diretas para os arquivos
 LINKS_DAS_PLANILHAS = [
-    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2022.xlsx',
-    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2023.xlsx',
-    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2024.xlsx',
-    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2025.xlsx'
+    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/DadosProdutividade_2024.xlsx',
+    'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/DadosProdutividade_2025.xlsx'
 ]
 
 # 1. Extração
@@ -292,5 +352,5 @@ if dados_consolidados is not None:
 
         # 4. Carga para o BigQuery
         NOME_DO_PROJETO = "projetointegrador4-473718"
-        ID_DA_TABELA = "dados_ssp.dados_2025"
+        ID_DA_TABELA = "dados_ssp.dados_produtividade"
         carregar_dados_bigquery(dados_finais, NOME_DO_PROJETO, ID_DA_TABELA, schema_definido)
