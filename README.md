@@ -64,11 +64,12 @@ Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enr
 
 | Nome do arquivo | Descrição |
 | -------- | ----- |
-|   Referências             |     Pasta com arquivos utilizados como referência sobre o tema  |
-|   dados_tratados.csv      |     Arquivo de saída (gerado pelo script e carregado no Google BigQuery)  |
-|   Problema_PI4.docx       |     Documento com a descrição do problema   |
-|   script_etl.py           |     Script principal do ETL  |
-|   README.md               |     Documentação do projeto  |
+|   Referências                  |     Pasta com arquivos utilizados como referência sobre o tema  |
+|   README.md                    |     Documentação do projeto  |
+|   Relatório Final - PI4.docx   |     Documento com o relatório do projeto   |
+|   etl_dados_ddm.py             |     Script principal do ETL  |
+|   etl_dados_produtividade.py   |     Script principal do ETL  |
+
 
 ### 5. Próximos Passos
 O desenvolvimento deste projeto continua, com os seguintes objetivos em mente:
