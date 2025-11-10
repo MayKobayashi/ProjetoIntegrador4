@@ -5,10 +5,10 @@
 ### Sumário
 - [1. Sobre o Projeto](#1-sobre-o-projeto)
 - [2. Tecnologias Utilizadas](#2-tecnologias-utilizadas)
-- [3. O Processo ETL](#3-o-processo-etl)
-  - [3.1. Extração (Extract)](#31-extração-extract)
-  - [3.2. Transformação (Transform)](#32-transformação-transform)
-  - [3.3. Carga (Load)](#33-carga-load)
+- [3. O Processo de Dados (Pipeline ETL)](#3-o-processo-de-dados-pipeline-etl)
+  - [3.1. ETL 1: Ocorrências (Script_DDM)](#31-etl-1-ocorrências-script_ddm)
+  - [3.2. ETL 2: Perfil do Agressor (Script_Produtividade)](#32-etl-2-perfil-do-agressor-script_produtividade)
+  - [3.3. Visualização (Looker Studio)](#33-visualização-looker-studio)
 - [4. Estrutura do Projeto](#4-estrutura-do-projeto)
 - [5. Próximos Passos](#5-próximos-passos)
 - [6. Autores](#6-autores)
@@ -16,65 +16,81 @@
 ---
 
 ### 1. Sobre o Projeto
-Este projeto foi desenvolvido para a disciplina de "Projeto Integrador 4" e tem como objetivo principal a criação de um processo de **ETL (Extract, Transform, Load)** para tratar e analisar dados públicos de criminalidade do estado de São Paulo.
+Este projeto foi desenvolvido para a disciplina de "Projeto Integrador 4" e tem como objetivo principal a criação de um pipeline de **ETL (Extract, Transform, Load)** para tratar e analisar dados públicos de criminalidade do estado de São Paulo.
 
 O foco da análise são as ocorrências registradas nas Delegacias de Defesa da Mulher (DDM) dos municípios de **Sorocaba** e **Votorantim**, visando gerar insights que possam ser utilizados em futuras visualizações e estudos sobre o tema.
 
-Atualmente, o projeto consiste em um script em Python que realiza todo o processo de ETL a partir de download de arquivos do site da Secretaria de Segurança Pública do Estado de São Paulo.
+Atualmente, o projeto consiste em dois scripts em Python (executados no Google Colab) que realizam todo o processo de ETL, desde o download dos arquivos do site da Secretaria de Segurança Pública até a carga dos dados tratados no Google BigQuery.
 
 **Status do Projeto:** `Em desenvolvimento`
 
 ### 2. Tecnologias Utilizadas
 - **Linguagem:** Python 3.9+
-- **Biblioteca Principal:** Pandas
+- **Bibliotecas Principais:** Pandas, Google Cloud BigQuery, Requests
 - **Ambiente de Desenvolvimento:** Google Colab
+- **Banco de Dados (Data Warehouse):** Google BigQuery
+- **Ferramenta de Visualização (BI):** Google Looker Studio
 
-### 3. O Processo ETL
-O script é dividido nas três etapas clássicas do ETL:
+### 3. O Processo de Dados (Pipeline ETL)
+O pipeline é dividido em dois processos de ETL distintos, que alimentam um dashboard centralizado.
 
-#### 3.1. Extração (Extract)
--   **Fonte de Dados:** Planilhas Excel baixadas diretamente do site da Secretaria de Segurança Pública do Estado de São Paulo.
--   **Processo:** A função `extrair_e_consolidar_dados` utiliza a biblioteca Pandas para ler o arquivo e carregá-lo em um DataFrame, que é a estrutura de dados principal usada nas etapas seguintes.
+#### 3.1. ETL 1: Ocorrências (Script_DDM)
+Este script (`Script_DDM.ipynb`) é responsável por tratar os dados gerais das ocorrências.
 
-#### 3.2. Transformação (Transform)
-Esta é a etapa mais complexa, onde os dados brutos são limpos, filtrados e enriquecidos. A função `transformar_dados` realiza as seguintes operações:
+* **Extração (Extract):**
+    * Baixa as planilhas `SPDadosCriminais_*.xlsx` (anos 2022-2025) do site da Secretaria de Segurança Pública.
+* **Transformação (Transform):**
+    * Consolida todas as abas de todos os arquivos em um único DataFrame.
+    * Filtra apenas registros dos municípios `SOROCABA` e `VOTORANTIM` e das delegacias `DDM SOROCABA` e `DDM VOTORANTIM`.
+    * Converte `DATA_OCORRENCIA_BO` para datetime e trata valores nulos.
+    * Cria colunas de enriquecimento, como `mes_ocorrencia` e `dia_semana`.
+    * Renomeia as colunas para um padrão amigável (ex: `NUM_BO` -> `codigo_bo`).
+* **Carga (Load):**
+    * Carrega o DataFrame tratado na tabela `dados_ssp.dados_ddm` dentro do projeto `projetointegrador4-473718` no Google BigQuery.
+    * Utiliza o modo `WRITE_TRUNCATE`, garantindo que a tabela seja sempre substituída pelos dados mais recentes a cada execução.
 
-1.  **Filtragem Geográfica:**
-    -   Mantém apenas os registros cujos municípios são `SOROCABA` ou `VOTORANTIM`.
-    -   Filtra as ocorrências para que sejam exclusivamente das delegacias `DDM SOROCABA` e `DDM VOTORANTIM`.
+#### 3.2. ETL 2: Perfil do Agressor (Script_Produtividade)
+Este script (`Script_Produtividade.ipynb`) foca em extrair dados de produtividade policial para traçar o perfil dos agressores.
 
-2.  **Limpeza e Formatação:**
-    -   Converte a coluna `DATA_OCORRENCIA_BO` de texto para o formato `datetime`. Registros com datas inválidas são descartados.
-    -   Valores nulos (`NaN`) em colunas textuais importantes (`HORA_OCORRENCIA_BO`, `BAIRRO`, etc.) são preenchidos com o valor padrão "Não Informado".
-    -   Nome das colunas são formatados para letra minúscula e alguns nomes ajustados para melhor entendimento do usuário.
-    -   Valores são formatados para ficarem somente com a primeira letra maiúscula.
+* **Extração (Extract):**
+    * Baixa as planilhas `DadosProdutividade_*.xlsx` (anos 2024-2025) do site da SSP.
+* **Transformação (Transform):**
+    * Lê apenas as abas que começam com `PRESOS E APREENDIDOS` de cada arquivo.
+    * Aplica os mesmos filtros geográficos (Sorocaba e Votorantim) e de delegacia (DDM).
+    * Renomeia colunas específicas do perfil do autor, como `SEXO_PESSOA` -> `sexo_autor`, `IDADE_PESSOA` -> `idade_autor`, `COR_CURTIS` -> `raca_autor`, etc.
+    * Realiza a limpeza e formatação dos dados.
+* **Carga (Load):**
+    * Carrega o DataFrame tratado na tabela `dados_ssp.dados_produtividade` no mesmo projeto do BigQuery.
+    * (Nota: A tabela `perfil_agressor` vista no BigQuery é uma *view* ou tabela derivada criada a partir da `dados_produtividade`).
 
-3.  **Enriquecimento de Dados (Criação de Novas Features):**
-    -   Cria a coluna `MES_OCORRENCIA` extraindo o mês da data da ocorrência.
-    -   Cria a coluna `DIA_SEMANA` com o nome do dia da semana em português (ex: "Segunda-feira").
+#### 3.3. Visualização (Looker Studio)
+O resultado final do pipeline é consumido por um dashboard no Looker Studio.
 
-4.  **Seleção de Colunas:**
-    -   Ao final, apenas as colunas mais relevantes para a análise são mantidas e reordenadas, gerando um DataFrame final mais enxuto e organizado.
-
-#### 3.3. Carga (Load)
--   **Processo:** A função `carregar_dados_bigquery` pega o DataFrame transformado e o envia diretamente para o Google BigQuery.
--   **Destino:** Dentro do Google BigQuery o DataFrame é enviado para o projeto `projetointegrador4-473718`, dentro do projeto existe um conjunto de dados chamado `dados_ssp`, e, por fim, uma tabela `dados_2025`.
+* **Fonte de Dados:**
+    * O dashboard (visto no arquivo `Dashboard_-_Violência_Contra_a_Mulher.pdf`) conecta-se diretamente às tabelas `dados_ssp.dados_ddm`, `dados_ssp.dados_produtividade` e `dados_ssp.dados_agressor` no BigQuery.
+* **Análises:** O painel exibe visualizações sobre:
+    * Evolução temporal das ocorrências (por data, mês, dia da semana, período).
+    * Localização geográfica (mapa de calor e ranking de bairros).
+    * Tipos de crime (Lesão Corporal Dolosa, Estupro, etc.).
+    * Perfil do Agressor (Raça, Sexo, Escolaridade, Tipo de Prisão).
+    * Perfil da Vítima (com base em dados históricos do SINAN).
 
 ### 4. Estrutura do Projeto
 
 | Nome do arquivo | Descrição |
 | -------- | ----- |
-|   Referências                  |     Pasta com arquivos utilizados como referência sobre o tema  |
-|   README.md                    |     Documentação do projeto  |
-|   Relatório Final - PI4.docx   |     Documento com o relatório do projeto   |
-|   etl_dados_ddm.py             |     Script principal do ETL  |
-|   etl_dados_produtividade.py   |     Script principal do ETL  |
-
+| `Script_DDM.ipynb` | Notebook Colab do ETL de Ocorrências (Fonte: SPDadosCriminais). |
+| `Script_Produtividade.ipynb` | Notebook Colab do ETL de Perfil do Agressor (Fonte: DadosProdutividade). |
+| `Dashboard_-_Violência_Contra_a_Mulher.pdf` | PDF de exemplo do dashboard no Looker Studio. |
+| `README.md` | Documentação do projeto. |
+| `Relatório Final - PI4.docx` | Documento com o relatório completo do projeto. |
+| `Referências/` | Pasta com arquivos utilizados como referência sobre o tema. |
 
 ### 5. Próximos Passos
 O desenvolvimento deste projeto continua, com os seguintes objetivos em mente:
 -   [ ] **Visualização de Dados:** Aprimorar o dashboard que foi criado no Google LookerStudio, incluindo mais filtros e gráficos.
--   [ ] **Validação:** Validar junto aos Stakeholders se a proposta atendo os requisitos necessários.
+-   [ ] **Validação:** Validar junto aos Stakeholders se a proposta atende os requisitos necessários.
+-   [ ] **Automação:** Configurar a execução automática dos scripts (ex: via Google Cloud Functions ou Workflows) para manter os dados atualizados.
 
 ### 6. Autores
 - Débora Kocks Nogueira
