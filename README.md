@@ -67,7 +67,7 @@ Este script (`Script_Produtividade.ipynb`) foca em extrair dados de produtividad
 O resultado final do pipeline é consumido por um dashboard no Looker Studio.
 
 * **Fonte de Dados:**
-    * O dashboard (visto no arquivo `Dashboard_-_Violência_Contra_a_Mulher.pdf`) conecta-se diretamente às tabelas `dados_ssp.dados_ddm`, `dados_ssp.dados_produtividade` e `dados_ssp.dados_agressor` no BigQuery.
+    * O dashboard (visto no arquivo `Dashboard_-_Violência_Contra_a_Mulher.pdf`) conecta-se diretamente às tabelas `dados_ssp.dados_ddm`, `dados_ssp.dados_produtividade` e `dados_ssp.perfil_agressor` no BigQuery.
 * **Análises:** O painel exibe visualizações sobre:
     * Evolução temporal das ocorrências (por data, mês, dia da semana, período).
     * Localização geográfica (mapa de calor e ranking de bairros).
@@ -81,6 +81,10 @@ O resultado final do pipeline é consumido por um dashboard no Looker Studio.
 | -------- | ----- |
 | `Script_DDM.ipynb` | Notebook Colab do ETL de Ocorrências (Fonte: SPDadosCriminais). |
 | `Script_Produtividade.ipynb` | Notebook Colab do ETL de Perfil do Agressor (Fonte: DadosProdutividade). |
+| `dados_ddm.csv` | Arquivo CSV com os dados baixados extraídos e tratados das ocorrências registradas nas DDMs de Sorocaba e Votorantim |
+| `dados_produtividade.csv` | Arquivo CSV com os dados baixados extraídos e tratados das prisões e apreensões vinculadas à DDMs de Sorocaba e Votorantim |
+| `perfil_agressor.csv` | Arquivo CSV derivado do arquivo dados_produtividade.csv |
+| `perfil_vitima.csv` | Arquivo CSV com os dados extraídos de atendidos de agressão extraídos do SINAN |
 | `Dashboard_-_Violência_Contra_a_Mulher.pdf` | PDF de exemplo do dashboard no Looker Studio. |
 | `README.md` | Documentação do projeto. |
 | `Relatório Final - PI4.docx` | Documento com o relatório completo do projeto. |
