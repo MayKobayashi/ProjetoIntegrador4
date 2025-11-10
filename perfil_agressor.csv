@@ -1,0 +1,264 @@
+codigo_bo,ano_ocorrencia,data_ocorrencia_bo,nome_municipio,nome_delegacia,tipo_ocorrencia,local_ocorrencia,bairro,flagrante,natureza_autor,sexo_autor,idade_autor,raca_autor,profissao_autor,escolaridade_autor,tipo_prisao_ssp
+Hb8186,2024,2024-05-23,Sorocaba,Ddm Sorocaba,,Casa,Vila Helena,S,Indiciado,M,45,Amarela,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Nw0266,2024,2024-10-08,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Helena,S,Indiciado,M,45,Amarela,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Jd4510,2024,2024-07-04,Sorocaba,Ddm Sorocaba,,Imobiliária,Jardim Vergueiro,N,Autor,M,24,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ls5055,2024,2024-08-27,Sorocaba,Ddm Sorocaba,,Junta/Fórum/Tribunal,Boa Vista,N,Autor,M,46,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ks8999,2024,2024-08-07,Sorocaba,Ddm Sorocaba,,Casa,Vila Santana,N,Autor,M,62,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Re6161,2024,2024-12-12,Sorocaba,Ddm Sorocaba,,Apartamento,Jardim Saira,N,Autor,M,29,Branca,Não Informado,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Kk0692,2024,2024-07-31,Votorantim,Ddm Sorocaba,,Casa,Alphaville,N,Autor,M,33,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Jb9234,2024,2024-07-03,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Autor,M,30,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Rk8081,2024,2024-12-17,Sorocaba,Ddm Sorocaba,,Casa,Vila Aeroporto,S,Autor,M,45,Branca,Desempregado,Não Informado,Nº De Infratores Presos Em Flagrante
+Rk8081,2024,2024-12-17,Sorocaba,Ddm Sorocaba,,Casa,Vila Aeroporto,S,Autor,M,33,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Oa7493,2024,2024-10-11,Votorantim,Ddm Votorantim,,Casa,Residencial Votorantim Park I,S,Autor,M,24,Branca,Operador(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Pf1637,2024,2024-10-31,Sorocaba,Ddm Votorantim,,Hospital,Parque Santa Isabel,S,Autor,M,43,Branca,Motorista,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Qf5357,2024,2024-11-25,Sorocaba,Ddm Sorocaba,,Prefeitura Municipal,Jd Abatia,S,Autor,M,28,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Fx5838,2024,2024-04-29,Sorocaba,Ddm Sorocaba,,Casa,Parque Das Laranjeiras,N,Capturado,M,41,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Rv5878,2024,2024-12-26,Sorocaba,Ddm Sorocaba,,Casa,Jardim J S Carvalho,N,Capturado,M,30,Branca,Pedreiro,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Jp8780,2024,2024-07-15,Sorocaba,Ddm Sorocaba,,Restaurante,Centro,N,Capturado,M,24,Branca,Não Informado,1º Grau Completo,Nº De Infratores Presos Por Mandado
+Jd1513,2024,2024-07-04,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,43,Branca,Azulejista,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Rg0263,2024,2024-12-13,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,37,Branca,Autonomo(A),Não Informado,Nº De Infratores Presos Por Mandado
+Ir6055,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Jardim Morita,N,Capturado,M,64,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ml7785,2024,2024-09-11,Votorantim,Ddm Votorantim,,Apartamentos,Vossoroca,N,Capturado,M,40,Branca,Pedreiro,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Oq3234,2024,2024-10-23,Sorocaba,Ddm Sorocaba,,Casa,Vila Dálmatas,N,Capturado,M,30,Branca,Não Informado,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Dd9063,2024,2024-03-05,Sorocaba,Ddm Sorocaba,,Casa,Vila Nova Sorocaba,N,Capturado,M,43,Branca,Autonomo(A),1º Grau Completo,Nº De Infratores Presos Por Mandado
+Dz5181,2024,2024-03-21,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,37,Branca,Mecanico(A),Superior Incompleto,Nº De Infratores Presos Por Mandado
+Py7720,2024,2024-11-19,Sorocaba,Ddm Sorocaba,,Casa,Jardim Santa Luiza,N,Capturado,M,38,Branca,Não Informado,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Jd1837,2024,2024-07-04,Sorocaba,Ddm Sorocaba,,Casa,Vila Ramon Lara Rodrigues,N,Capturado,M,36,Branca,Tecnico Em Enfermagem,Não Informado,Nº De Infratores Presos Por Mandado
+Ki7425,2024,2024-07-30,Sorocaba,Ddm Sorocaba,,Casa,Jardim Santa Catarina,N,Capturado,M,45,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Pp6521,2024,2024-11-12,Sorocaba,Ddm Sorocaba,,Casa,Parque Das Laranjeiras,N,Capturado,M,36,Branca,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Lz3133,2024,2024-09-02,Sorocaba,Ddm Sorocaba,,Casa,Jardim Maria Antônia Prado,N,Capturado,M,57,Branca,Aposentado(A),Superior Completo,Nº De Infratores Presos Por Mandado
+Lb1981,2024,2024-08-14,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Santo Amaro,N,Capturado,M,35,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ir3758,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Portal Do Eden I,N,Capturado,M,39,Branca,Professor(A),Superior Completo,Nº De Infratores Presos Por Mandado
+Pc3148,2024,2024-11-01,Votorantim,Ddm Votorantim,,Casa,Vila Dominguinho,N,Capturado,M,47,Branca,Comerciante,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Mk5273,2024,2024-09-10,Sorocaba,Ddm Sorocaba,,Casa,Jardim Ipiranga,N,Capturado,M,36,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Iq7224,2024,2024-06-24,Sorocaba,Ddm Sorocaba,,Bar/Botequim,Jardim Santo Amaro,N,Capturado,M,26,Branca,Autonomo(A),1º Grau Completo,Nº De Infratores Presos Por Mandado
+Ir1748,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Granja Olga Iii,N,Capturado,M,41,Branca,Comerciante,Superior Completo,Nº De Infratores Presos Por Mandado
+Gy0589,2024,2024-05-21,Sorocaba,Ddm Sorocaba,,Apartamento,Vila Santa Terezinha,N,Capturado,M,52,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Og6263,2024,2024-10-16,Sorocaba,Ddm Sorocaba,,Casa,Jardim J S Carvalho,N,Capturado,M,37,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Hq1863,2024,2024-06-04,Sorocaba,Ddm Sorocaba,,Via Pública,Brigadeiro Tobias,S,Indiciado,M,38,Branca,Segurança,Não Informado,Nº De Infratores Presos Em Flagrante
+Ph8115,2024,2024-11-06,Sorocaba,Ddm Sorocaba,Homicídio Doloso,Apartamento,Jardim Sueli,S,Indiciado,M,37,Branca,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+If6764,2024,2024-06-17,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Ensino Fundamental,Jardim Josane,S,Indiciado,M,25,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Oa2727,2024,2024-10-11,Votorantim,Ddm Votorantim,,Casa,Bairro Rio Acima,S,Indiciado,M,38,Branca,Polidor De Veiculos,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Es3004,2024,2024-04-05,Sorocaba,Ddm Sorocaba,,Casa,Cidade Jardim,S,Indiciado,M,33,Branca,Tecnico(A) Telefonia,Não Informado,Nº De Infratores Presos Em Flagrante
+Hw9050,2024,2024-06-10,Sorocaba,Ddm Sorocaba,,Casa,Jardim Abatia,S,Indiciado,M,35,Branca,Pedreiro,Não Informado,Nº De Infratores Presos Em Flagrante
+Mo9832,2024,2024-09-13,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Zulmira,S,Indiciado,M,32,Branca,Pensionista,Não Informado,Nº De Infratores Presos Em Flagrante
+Pp8189,2024,2024-11-12,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Santa Esmeralda,S,Indiciado,M,35,Branca,Instalador(A),1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Df8432,2024,2024-03-06,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Sol Nascente,S,Indiciado,M,37,Branca,Mecanico(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Ru0311,2024,2024-12-24,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Hospital,Jardim Maria Antônia Prado,S,Indiciado,M,38,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+If6764,2024,2024-06-17,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Ensino Fundamental,Jardim Josane,S,Indiciado,M,35,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Iy5315,2024,2024-07-01,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Mercado,Jardim Maria Do Carmo,S,Indiciado,M,47,Branca,Fiscal,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Co6787,2024,2024-02-23,Votorantim,Ddm Votorantim,,Casa,Jardim Araujo,S,Indiciado,M,24,Branca,Sem Profissao Definida,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bj6863,2024,2024-01-30,Votorantim,Ddm Votorantim,,Casa,Vila Nova,S,Indiciado,M,24,Branca,Autonomo(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Np5760,2024,2024-10-03,Sorocaba,Ddm Sorocaba,,Casa,Jardim Tatiana,S,Indiciado,M,33,Branca,Comerciante,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Qs0795,2024,2024-12-03,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim J S Carvalho,S,Indiciado,M,30,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Rt7887,2024,2024-12-24,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Santa Luiza,S,Indiciado,F,27,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Af0374,2024,2024-01-05,Votorantim,Ddm Votorantim,,Casa,Pró Morar - Area Rural,S,Indiciado,M,39,Branca,Catador Material Reciclavel,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Nf6591,2024,2024-09-26,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Ipatinga,S,Indiciado,M,32,Branca,Pizzaiolo(A),1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Pr3157,2024,2024-11-13,Sorocaba,Ddm Sorocaba,,Casa,Jardim Sao Conrado,S,Indiciado,M,38,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ae3277,2024,2024-01-04,Sorocaba,Ddm Sorocaba,,Mercado,Vila Marta,S,Indiciado,M,47,Branca,Gerente Financeiro,Superior Completo,Nº De Infratores Presos Em Flagrante
+If6764,2024,2024-06-17,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Ensino Fundamental,Jardim Josane,S,Indiciado,M,25,Branca,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Qs0795,2024,2024-12-03,Sorocaba,Ddm Sorocaba,Porte De Arma,Casa,Jardim J S Carvalho,S,Indiciado,M,30,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Dp7460,2024,2024-03-14,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Valera,S,Indiciado,M,31,Branca,Desempregado,Não Informado,Nº De Infratores Presos Em Flagrante
+Pj1199,2024,2024-11-06,Sorocaba,Ddm Sorocaba,,Interior De Transporte Coletivo,Vila Alcolea,S,Indiciado,M,23,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Dg8544,2024,2024-03-07,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Barra Funda,S,Indiciado,M,31,Branca,Desempregado(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Pf3774,2024,2024-11-04,Sorocaba,Ddm Sorocaba,,Apartamento,Vila Trujilo,S,Indiciado,M,49,Branca,Radialista,Não Informado,Nº De Infratores Presos Em Flagrante
+Fh9581,2024,2024-04-17,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Jardim Tatiana,S,Indiciado,M,47,Branca,Garçon(Ete),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Oa0052,2024,2024-10-11,Sorocaba,Ddm Sorocaba,,Casa,Jardim Sao Marcos,S,Indiciado,M,45,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Oe8489,2024,2024-10-15,Sorocaba,Ddm Votorantim,,Estacionamento Particular,Vila Barcelona,S,Indiciado,M,42,Branca,Torneiro(A) Mecanico,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Dh2641,2024,2024-03-07,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Simus,S,Indiciado,M,36,Branca,Autonomo(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Iw4675,2024,2024-06-28,Sorocaba,Ddm Sorocaba,,Casa,Jardim Santo Amaro,S,Indiciado,M,25,Branca,Lavador(A) De Carro,Não Informado,Nº De Infratores Presos Em Flagrante
+Mn4938,2024,2024-09-12,Sorocaba,Ddm Sorocaba,,Casa,Lopes De Oliveira,S,Indiciado,M,33,Branca,Não Informado,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Qr5044,2024,2024-12-03,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Santa Catarina,S,Indiciado,M,51,Branca,Garçon(Ete),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+If6764,2024,2024-06-17,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Ensino Fundamental,Jardim Josane,S,Indiciado,M,35,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Kr6879,2024,2024-08-07,Sorocaba,Ddm Sorocaba,,Ônibus/Lotação/Trolebus,Jardim Maria,S,Indiciado,M,29,Branca,Ajudante De Pedreiro,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Nt1904,2024,2024-10-07,Sorocaba,Ddm Sorocaba,,Casa,Não Informado,S,Indiciado,M,42,Branca,Desempregado,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Pa1605,2024,2024-10-31,Sorocaba,Ddm Sorocaba,,Casa,Parque Das Laranjeiras,S,Indiciado,M,36,Branca,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Nz2949,2024,2024-10-10,Sorocaba,Ddm Sorocaba,,Interior De Transporte Coletivo,Jardim Santa Cecilia,S,Indiciado,M,52,Branca,Desempregado,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Ij5667,2024,2024-06-19,Sorocaba,Ddm Sorocaba,,Casa,Jardim Magnolias,S,Indiciado,M,34,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bm9194,2024,2024-02-01,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Jardim Araujo,S,Indiciado,M,24,Branca,Sem Profissao Definida,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Dq1974,2024,2024-03-14,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Ipiranga,S,Indiciado,M,18,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Iq1875,2024,2024-06-24,Sorocaba,Ddm Sorocaba,,Outros,Conj Hab Ulysses Guimaraes,S,Indiciado,M,31,Branca,Vendedor(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Iy6667,2024,2024-07-01,Votorantim,Ddm Votorantim,,Casa,Fornazari,S,Indiciado,M,38,Branca,Sem Profissao Definida,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Eb6721,2024,2024-03-22,Sorocaba,Ddm Sorocaba,,Casa,Jardim Goncalves,S,Indiciado,M,44,Branca,Policial Militar,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Il0715,2024,2024-06-20,Sorocaba,Ddm Sorocaba,,Casa,Jardim Montreal,S,Indiciado,M,47,Branca,Sem Profissao Definida,Não Informado,Nº De Infratores Presos Em Flagrante
+Ks6865,2024,2024-08-07,Sorocaba,Ddm Sorocaba,,Casa,Vila Rodrigues,S,Indiciado,M,38,Branca,Desempregado,Não Informado,Nº De Infratores Presos Em Flagrante
+Qh7862,2024,2024-11-26,Votorantim,Ddm Votorantim,,Casa,Vila Votocel,S,Indiciado,M,55,Branca,Vigilante,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Kz2077,2024,2024-08-13,Votorantim,Ddm Votorantim,,Casa,Rua Cinco,S,Indiciado,M,66,Branca,Aposentado(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Je2398,2024,2024-07-05,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Jardim Clarice I,S,Indiciado,M,44,Branca,Apresentador De Tv,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Qy4872,2024,2024-12-09,Sorocaba,Ddm Sorocaba,,Casas,Jardim Sol Nascente,S,Indiciado,F,32,Branca,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Df6611,2025,2025-03-01,Votorantim,Ddm Votorantim,Tráfico De Entorpecentes,Casa,Vila Dominguinho,S,Adolescente Infrator,M,16,Não Informado,Desempregado,1º Grau Incompleto,Nº De Infratores Apreendidos Em Flagrante
+Jf8683,2025,2025-06-26,Sorocaba,Ddm Sorocaba,,Casa,Jardim Wanel Ville Iv,N,Autor,M,31,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Cq4606,2025,2025-02-20,Votorantim,Ddm Votorantim,,Casa,Vila Amorim,S,Autor,M,64,Não Informado,Segurança,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Is8278,2025,2025-06-16,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Caguassu,S,Autor,M,34,Não Informado,Pedreiro,Não Informado,Nº De Infratores Presos Em Flagrante
+Oe0159,2025,2025-09-26,Sorocaba,Ddm Sorocaba,,Bureau De Serviços,Jardim Maria Do Carmo,S,Autor,M,31,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Kb6049,2025,2025-07-11,Sorocaba,Ddm Sorocaba,,Apartamentos,Caguaçu,S,Autor,M,31,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Lh8930,2025,2025-08-05,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Jardim,S,Autor,M,18,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+De2647,2025,2025-02-28,Sorocaba,Ddm Sorocaba,,Casa,Jardim Simus,S,Autor,M,59,Não Informado,Aposentado(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Am3251,2025,2025-01-10,Sorocaba,Ddm Sorocaba,,Casas,Genebra,S,Autor,M,62,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+En9808,2025,2025-03-27,Sorocaba,Ddm Sorocaba,,Casa,Vila Trujillo,S,Autor,M,42,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Jj3513,2025,2025-06-29,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Aparecidinha,S,Autor,M,37,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+No0131,2025,2025-09-15,Sorocaba,Ddm Sorocaba,,Casas,Parque Sao Bento,S,Autor/Vítima,M,63,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ea9439,2025,2025-03-18,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Califórnia,N,Capturado,M,56,Não Informado,Ajudante Geral,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Eu7065,2025,2025-04-01,Sorocaba,Ddm Sorocaba,,Delegacia,Jardim Uirapuru,N,Capturado,F,31,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ki9155,2025,2025-07-17,Sorocaba,Ddm Sorocaba,,Apartamento,Recreio Dos Sorocabanos,N,Capturado,M,29,Não Informado,Autonomo(A),Superior Incompleto,Nº De Infratores Presos Por Mandado
+Kb0035,2025,2025-07-11,Sorocaba,Ddm Sorocaba,,Casa,Jardim Praiso,N,Capturado,M,51,Não Informado,Engenheiro(A),Superior Completo,Nº De Infratores Presos Por Mandado
+Ep0306,2025,2025-03-28,Votorantim,Ddm Votorantim,,Casa,Jardim Maria Jose,N,Capturado,M,32,Não Informado,Reciclador,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Ky5238,2025,2025-07-29,Sorocaba,Ddm Sorocaba,,Casa,Jardim Hungares,N,Capturado,M,34,Não Informado,Autonomo(A),Não Informado,Nº De Infratores Presos Por Mandado
+Gr7844,2025,2025-05-08,Sorocaba,Ddm Sorocaba,,Casa,Além Ponte,N,Capturado,M,27,Não Informado,Eletricista,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Hd2269,2025,2025-05-16,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,25,Não Informado,Sem Profissao Definida,2º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Cq8851,2025,2025-02-20,Sorocaba,Ddm Sorocaba,,Via Pública,Vila Barao,N,Capturado,M,24,Não Informado,Operador(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Ij2649,2025,2025-06-09,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,66,Não Informado,Motorista,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Dt1043,2025,2025-03-12,Votorantim,Ddm Sorocaba,,Casa,Jardim Archila,N,Capturado,M,27,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Lm9461,2025,2025-08-08,Sorocaba,Ddm Sorocaba,,Casa,Jardim Dois Corações,N,Capturado,M,41,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+De5993,2025,2025-02-28,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,53,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Em3526,2025,2025-03-26,Votorantim,Ddm Sorocaba,,Casa,Parque Bela Vista,N,Capturado,M,41,Não Informado,Consultor(A),Superior Completo,Nº De Infratores Presos Por Mandado
+Iw2390,2025,2025-06-18,Sorocaba,Ddm Sorocaba,,Casa,Jardim Dois Coracoes,N,Capturado,M,30,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ee0135,2025,2025-03-20,Sorocaba,Ddm Sorocaba,,Via Pública,Vila Rodrigues,N,Capturado,M,30,Não Informado,Pedreiro,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Co0681,2025,2025-02-18,Sorocaba,Ddm Sorocaba,,Metalúrgica,Éden,N,Capturado,M,37,Não Informado,Operario(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Jh4102,2025,2025-06-27,Sorocaba,Ddm Sorocaba,,Casas,Jardim Guaruja,N,Capturado,M,48,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Od7926,2025,2025-09-26,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,31,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Rb0496,2024,2024-12-10,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,42,Não Informado,Promotor(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Oh5226,2025,2025-09-29,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,39,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Mz8705,2025,2025-09-05,Sorocaba,Ddm Sorocaba,,Casa,Jardim Wanel Ville Iii,N,Capturado,M,38,Não Informado,Entregador(A),1º Grau Completo,Nº De Infratores Presos Por Mandado
+Hk2978,2025,2025-05-21,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,41,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Bs2548,2025,2025-02-03,Sorocaba,Ddm Sorocaba,,Escritórios,Não Informado,N,Capturado,M,53,Não Informado,Auxiliar De Enfermagen,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Eu9368,2025,2025-04-01,Sorocaba,Ddm Sorocaba,,Casa,Aparecidinha,N,Capturado,M,49,Não Informado,Não Informado,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Ef2128,2025,2025-03-21,Sorocaba,Ddm Sorocaba,,Casa,Parque Vitoria Regia,N,Capturado,M,40,Não Informado,Musico(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Fp7028,2025,2025-04-16,Votorantim,Ddm Sorocaba,,Obra/Construção,Jardim Toledo,N,Capturado,M,35,Não Informado,Pedreiro,1º Grau Completo,Nº De Infratores Presos Por Mandado
+Jo0802,2025,2025-07-02,Votorantim,Ddm Votorantim,,Casa,Green Valley,N,Capturado,M,26,Não Informado,Cozinheiro(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Bp1441,2025,2025-01-31,Sorocaba,Ddm Sorocaba,,Casa,Jardim Lena,N,Capturado,M,26,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Fx9798,2025,2025-04-23,Sorocaba,Ddm Sorocaba,,Casas,Jardim Colinas De Sao Guilherme,N,Capturado,M,36,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Lg6321,2025,2025-08-04,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,23,Não Informado,Autonomo(A),Superior Incompleto,Nº De Infratores Presos Por Mandado
+Jz4581,2025,2025-07-10,Sorocaba,Ddm Sorocaba,,Casa,Brigadeiro Tobias,N,Capturado,M,41,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Hc0580,2025,2025-05-15,Sorocaba,Ddm Sorocaba,,Apartamentos,Altos De Ipanema,N,Capturado,M,20,Não Informado,Auxiliar De Expedicao,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Bh9214,2025,2025-01-27,Sorocaba,Ddm Votorantim,,Casa,Vila Espirito Santo,N,Capturado,M,46,Não Informado,Mecanico(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Aq5838,2025,2025-01-14,Sorocaba,Ddm Sorocaba,,Delegacia,Jardim America,N,Capturado,M,21,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Dt2358,2025,2025-03-12,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,44,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ai3606,2025,2025-01-08,Sorocaba,Ddm Sorocaba,,Casa,Vila Jardini,N,Capturado,M,37,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Mv1416,2025,2025-09-02,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,48,Não Informado,Motorista,1º Grau Completo,Nº De Infratores Presos Por Mandado
+Kw8016,2025,2025-07-28,Sorocaba,Ddm Sorocaba,,Casas, ,N,Capturado,M,60,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Mq7118,2025,2025-08-29,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Vergueiro,N,Capturado,M,32,Não Informado,Vendedor(A) Ambulante,Superior Completo,Nº De Infratores Presos Por Mandado
+Cd7031,2025,2025-02-11,Sorocaba,Ddm Sorocaba,,Casa,Vila Fiori,N,Capturado,M,26,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Dp7240,2025,2025-03-10,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Helena,S,Indiciado,M,27,Não Informado,Desempregado,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ds8690,2025,2025-03-12,Sorocaba,Ddm Sorocaba,Porte De Entorpecentes,Casa,Jardim San Rafael,S,Indiciado,M,33,Não Informado,Pedreiro,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bv7841,2025,2025-02-05,Sorocaba,Ddm Sorocaba,,Casa,Jardim Pagliato,S,Indiciado,M,33,Não Informado,Funcion.Publico Municipal,Superior Completo,Nº De Infratores Presos Em Flagrante
+Cy8429,2025,2025-02-25,Votorantim,Ddm Votorantim,,Casa,Jardim São Matheus,S,Indiciado,M,46,Não Informado,Desempregado,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Lf7979,2025,2025-08-04,Sorocaba,Ddm Sorocaba,,Casas,Vila Sao Joao,S,Indiciado,M,42,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ll4729,2025,2025-08-07,Sorocaba,Ddm Sorocaba,Estupro De Vulnerável,Casa,Parque Sao Bento,S,Indiciado,M,23,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bw9737,2025,2025-02-06,Sorocaba,Ddm Sorocaba,,Casa,Vila Douglas Lara,S,Indiciado,M,39,Não Informado,Pintor(A),1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bk1884,2025,2025-01-28,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Cajuru Do Sul,S,Indiciado,M,18,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bd3972,2025,2025-01-23,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Lopes De Oliveira,S,Indiciado,M,35,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bp5703,2025,2025-01-31,Votorantim,Ddm Votorantim,,Casa,Jardim Toledo,S,Indiciado,M,31,Não Informado,Auxiliar De Producao,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ei0849,2025,2025-03-24,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Montreal,S,Indiciado,M,31,Não Informado,Mecanico(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ex3260,2025,2025-04-03,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Centro,S,Indiciado,M,30,Não Informado,Sem Profissao Definida,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Gw8329,2025,2025-05-12,Sorocaba,Ddm Sorocaba,,Casa,Vila Nova Esperanca,S,Indiciado,M,22,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Nh8993,2025,2025-09-11,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Santa Marina I,S,Indiciado,M,32,Não Informado,Garçon(Ete),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Mv2839,2025,2025-09-02,Sorocaba,Ddm Sorocaba,,Casa,Jardim Nova Esperanca,S,Indiciado,M,42,Não Informado,Auxiliar De Producao,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ny2102,2025,2025-09-23,Sorocaba,Ddm Sorocaba,,Casa,Parque Vitoria Regia,S,Indiciado,M,38,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ki4254,2025,2025-07-17,Sorocaba,Ddm Sorocaba,,Casa,Jardim Sao Marcos,S,Indiciado,F,44,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Da6966,2025,2025-02-26,Sorocaba,Ddm Sorocaba,Tentativa De Homicídio,Casa,Vila Gabriel,S,Indiciado,M,37,Não Informado,Sem Profissao Definida,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ch3172,2025,2025-02-13,Sorocaba,Ddm Sorocaba,Porte De Arma,Casa,Zacarias,S,Indiciado,M,36,Não Informado,Operador(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ey7235,2025,2025-04-04,Sorocaba,Ddm Sorocaba,,Casa,Jardim Novo Horizonte,S,Indiciado,F,52,Não Informado,Desempregado(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Io1930,2025,2025-06-12,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Tupa,S,Indiciado,F,25,Não Informado,Faxineiro(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Dt7206,2025,2025-03-13,Sorocaba,Ddm Sorocaba,,Casa,Vila Josue Dos Santos,S,Indiciado,M,35,Não Informado,Mecanico(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Df6611,2025,2025-03-01,Votorantim,Ddm Votorantim,Tráfico De Entorpecentes,Casa,Vila Dominguinho,S,Indiciado,M,18,Não Informado,Desempregado,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Et7880,2025,2025-04-01,Sorocaba,Ddm Sorocaba,Estupro De Vulnerável,Casa,Jardim Dos Estados,S,Indiciado,M,43,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ae9661,2025,2025-01-06,Sorocaba,Ddm Sorocaba,Roubo - Outros,Casa,Jardim Wanel Ville Iv,S,Indiciado,M,32,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Cb3704,2025,2025-02-10,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Jardim Montevideo,S,Indiciado,M,39,Não Informado,Pedreiro,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Fl4945,2025,2025-04-14,Sorocaba,Ddm Sorocaba,,Casa,Jardim Ouro Fino,S,Indiciado,M,42,Não Informado,Desempregado(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Oi2097,2025,2025-09-30,Sorocaba,Ddm Sorocaba,,Casa,Jardim Prestes De Barros,S,Indiciado,M,30,Não Informado,Desempregado,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bd7974,2025,2025-01-23,Sorocaba,Ddm Sorocaba,,Casa,Jardim Zulmira,S,Indiciado,M,43,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ev5007,2025,2025-04-02,Sorocaba,Ddm Sorocaba,,Casa,Jardim Zulmira,S,Indiciado,M,52,Não Informado,Catador Material Reciclavel,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+If5781,2025,2025-06-06,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Alpes De Sorocaba,S,Indiciado,M,25,Não Informado,Auxiliar De Estoque,Superior Incompleto,Nº De Infratores Presos Em Flagrante
+Lz5546,2025,2025-08-18,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Jardim Sao Guilherme,S,Indiciado,M,70,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bm4743,2025,2025-01-29,Sorocaba,Ddm Sorocaba,,Casa,Vila Egidio,S,Indiciado,M,35,Não Informado,Mecanico(A) De Manutencao,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Mx9716,2025,2025-09-04,Sorocaba,Ddm Sorocaba,,Apartamentos,Jardim Horizonte,S,Indiciado,M,42,Não Informado,Pedreiro,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bx3963,2025,2025-02-06,Sorocaba,Ddm Sorocaba,,Via Pública,Jardim Santo Amaro,S,Indiciado,M,28,Não Informado,Desempregado,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ew9382,2025,2025-04-03,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Brasilandia,S,Indiciado,F,63,Não Informado,Pensionista,Não Informado,Nº De Infratores Presos Em Flagrante
+Dp1148,2025,2025-03-10,Sorocaba,Ddm Sorocaba,,Casa,Jardim Nogueira,S,Indiciado,M,46,Não Informado,Vidraceiro(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Ds4077,2025,2025-03-12,Sorocaba,Ddm Sorocaba,,Casa,Jardim Santa Lucia,S,Indiciado,F,43,Não Informado,Acougueiro(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Gr6166,2025,2025-05-08,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Além Ponte,S,Indiciado,M,27,Não Informado,Eletricista,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ko6835,2025,2025-07-22,Sorocaba,Ddm Sorocaba,Tentativa De Homicídio,Casa,Parque Vitoria Regia,S,Indiciado,M,51,Não Informado,Motorista,Não Informado,Nº De Infratores Presos Em Flagrante
+Js9146,2025,2025-07-06,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Rodoviário,Vila Alcolea,S,Indiciado,M,27,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Lt0096,2025,2025-08-13,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casas,Vila Assis,S,Indiciado,M,39,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Gb2611,2025,2025-04-25,Sorocaba,Ddm Sorocaba,,Clínica,Centro,S,Indiciado,M,53,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Nm6197,2025,2025-09-15,Sorocaba,Ddm Sorocaba,,Casa,Vila Campos,S,Indiciado,F,31,Não Informado,Autonomo(A),Superior Incompleto,Nº De Infratores Presos Em Flagrante
+Ie4883,2025,2025-06-05,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Lopes De Oliveira,S,Indiciado,M,24,Não Informado,Repositor(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Dq8406,2025,2025-03-11,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Área Comum,Granja Olga I,S,Indiciado,M,32,Não Informado,Policial Militar,Não Informado,Nº De Infratores Presos Em Flagrante
+Nn2732,2025,2025-09-15,Sorocaba,Ddm Sorocaba,,Casa,Aparecidinha,S,Indiciado,M,53,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Kq3429,2025,2025-07-23,Sorocaba,Ddm Sorocaba,,Casa,Iporanga,S,Indiciado,M,36,Não Informado,Motorista,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Nf1536,2025,2025-09-09,Sorocaba,Ddm Sorocaba,,Casa,Jardim Jatoba,S,Indiciado,M,36,Não Informado,Pintor(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Cb4716,2025,2025-02-10,Votorantim,Ddm Votorantim,Lesão Corporal Dolosa,Casa,Cristal,S,Indiciado,M,32,Não Informado,Instrutor(A),Superior Completo,Nº De Infratores Presos Em Flagrante
+Ch3172,2025,2025-02-13,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Zacarias,S,Indiciado,M,36,Não Informado,Operador(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Fd7976,2025,2025-04-08,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Vila Adelia,S,Indiciado,M,41,Não Informado,Desempregado,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Fo0518,2025,2025-04-15,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Vila Trujillo,S,Indiciado,M,25,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Cg8824,2025,2025-02-13,Sorocaba,Ddm Sorocaba,,Casa,Jardim Sao Marcos,S,Indiciado,M,47,Não Informado,Autonomo(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Lq2752,2025,2025-08-11,Sorocaba,Ddm Sorocaba,Tráfico De Entorpecentes,Casa,Cidade Jardim,S,Indiciado,M,22,Não Informado,Autonomo(A),1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Du0085,2025,2025-03-13,Sorocaba,Ddm Sorocaba,,Apartamento,Jardim Europa,S,Indiciado,F,21,Não Informado,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Go4612,2025,2025-05-06,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Santana,S,Indiciado,M,44,Não Informado,Instalador(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Df6611,2025,2025-03-01,Votorantim,Ddm Votorantim,Tráfico De Entorpecentes,Casa,Vila Dominguinho,S,Indiciado,M,20,Não Informado,Desempregado,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+In0050,2025,2025-06-11,Sorocaba,Ddm Sorocaba,,Casa,Jardim Boa Esperanca,S,Indiciado,M,42,Não Informado,Vigilante,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Cx6448,2025,2025-02-24,Sorocaba,Ddm Sorocaba,,Casa,Aparecidinha,S,Indiciado,M,27,Não Informado,Ajudante,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Ac4198,2025,2025-01-03,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Jardim Alegria,S,Indiciado,M,43,Não Informado,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ag9351,2025,2025-01-07,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Assis,S,Indiciado,M,33,Não Informado,Auxiliar De Serviços Gerais,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bd3117,2025,2025-01-23,Votorantim,Ddm Votorantim,,Casa,Parque Bela Vista,S,Indiciado,M,26,Não Informado,Sem Profissao Definida,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Dc9252,2025,2025-02-27,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim J S Carvalho,S,Indiciado,M,33,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+In6926,2025,2025-06-12,Sorocaba,Ddm Sorocaba,,Lojas,Jardim Piazza Di Roma,S,Indiciado,M,35,Não Informado,Assistente Tecnico,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Gb0733,2025,2025-04-25,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Parque Sao Bento,S,Indiciado,M,41,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Gq9513,2025,2025-05-07,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Parque Sao Bento,S,Indiciado,M,25,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Bz3327,2025,2025-02-07,Votorantim,Ddm Votorantim,,Apartamentos,Jardim Araujo,S,Indiciado,M,38,Não Informado,Empresario(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Fh8207,2025,2025-04-10,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Santa Lucia,S,Indiciado,M,39,Não Informado,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Cc3178,2025,2025-02-10,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Goncalves,S,Indiciado,M,32,Não Informado,Web Designer,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ju0812,2024,2024-07-18,Sorocaba,Ddm Sorocaba,,Casa,Vila Santa Cruz,S,Autor,M,40,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ky0056,2024,2024-08-12,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Autor,M,33,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Lq6615,2024,2024-08-26,Sorocaba,Ddm Sorocaba,,Delegacia,Jardim America,N,Autor,M,31,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Hh8774,2024,2024-05-28,Sorocaba,Ddm Sorocaba,,Casa,Vila Adelia,S,Autor,M,39,Parda,Não Informado,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ji8683,2024,2024-07-05,Votorantim,Ddm Votorantim,,Casa,Não Informado,S,Autor,M,43,Parda,Pedreiro,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Qu6959,2024,2024-12-05,Sorocaba,Ddm Sorocaba,Estupro,De Frente A Residência Da Vítima,Jardim Sao Marcos,S,Autor,M,57,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Qu6959,2024,2024-12-05,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,De Frente A Residência Da Vítima,Jardim Sao Marcos,S,Autor,M,57,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Jp0840,2024,2024-07-15,Sorocaba,Ddm Sorocaba,,Casa,Vila Olimpia,N,Autor,F,39,Parda,Autonomo(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Aq6878,2024,2024-01-15,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Formosa,N,Autor/Vítima,F,45,Parda,Desempregado,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Aq6878,2024,2024-01-15,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Formosa,N,Autor/Vítima,M,41,Parda,Desempregado,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Hs6408,2024,2024-06-06,Sorocaba,Ddm Sorocaba,,Casa,Jardim J S Carvalho,N,Capturado,M,30,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Dx9808,2024,2024-03-20,Sorocaba,Ddm Sorocaba,,Casa,Jardim Zulmira,N,Capturado,M,43,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Ir1578,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Vila Aeroporto,N,Capturado,M,35,Parda,Marmorista,1º Grau Completo,Nº De Infratores Presos Por Mandado
+Ro0576,2024,2024-12-19,Sorocaba,Ddm Sorocaba,,Casa,Jardim Atilio Silvano,N,Capturado,M,47,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Lz2693,2024,2024-09-02,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,35,Parda,Desempregado,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Is1526,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Parque Sao Bento,N,Capturado,M,38,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Og5247,2024,2024-10-16,Sorocaba,Ddm Sorocaba,,Casa,Vila Guadalajara,N,Capturado,M,30,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Dy0708,2024,2024-03-20,Sorocaba,Ddm Sorocaba,,Casa,Vila Aeroporto,N,Capturado,M,35,Parda,Marmorista,1º Grau Completo,Nº De Infratores Presos Por Mandado
+Ir5825,2024,2024-06-25,Sorocaba,Ddm Sorocaba,,Casa,Jardim Nova Manchester,N,Capturado,M,53,Parda,Não Informado,Não Informado,Nº De Infratores Presos Por Mandado
+Mc8147,2024,2024-09-04,Sorocaba,Ddm Sorocaba,,Via Pública,Vila Zacarias,N,Capturado,M,24,Parda,Desempregado(A),2º Grau Completo,Nº De Infratores Presos Por Mandado
+Jv0635,2024,2024-07-19,Sorocaba,Ddm Sorocaba,,Delegacia,Jardi Embaixador,N,Capturado,M,38,Parda,Montador De Moveis Madeira,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Em0290,2024,2024-04-01,Sorocaba,Ddm Sorocaba,,Via Pública,Vila Emilio Peres,S,Indiciado,M,31,Parda,Desempregado,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Pz6126,2024,2024-11-20,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Nova Esperanca,S,Indiciado,M,32,Parda,Cabeleireiro(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Ge7769,2024,2024-05-06,Sorocaba,Ddm Sorocaba,,Casa,Jardim Sao Guilherme I,S,Indiciado,M,59,Parda,Servente,Não Informado,Nº De Infratores Presos Em Flagrante
+Il3815,2024,2024-06-20,Sorocaba,Ddm Sorocaba,,Velório,Vila Gagliari,S,Indiciado,M,54,Parda,Funileiro(A),Não Informado,Nº De Infratores Presos Em Flagrante
+Ab0883,2024,2024-01-02,Sorocaba,Ddm Sorocaba,,Casa,Jardim Residencial Villa Amato,S,Indiciado,M,20,Parda,Desempregado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ic2747,2024,2024-06-13,Sorocaba,Ddm Sorocaba,,Farmácia/Drogaria,Centro,S,Indiciado,M,37,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Rt6875,2024,2024-12-24,Sorocaba,Ddm Sorocaba,,Casa,Vila Barao,S,Indiciado,M,21,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Je8005,2024,2024-07-05,Sorocaba,Ddm Sorocaba,,Casa,Parque São Bento,S,Indiciado,M,48,Parda,Desempregado,Não Informado,Nº De Infratores Presos Em Flagrante
+Gy8818,2024,2024-05-21,Sorocaba,Ddm Sorocaba,,Casa,Cajuru Do Sul,S,Indiciado,M,51,Parda,Pedreiro,Não Informado,Nº De Infratores Presos Em Flagrante
+Eb3354,2024,2024-03-22,Sorocaba,Ddm Sorocaba,,Casa,Parque São Bento,S,Indiciado,M,27,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Mc4437,2024,2024-09-04,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Vila Barcelona,S,Indiciado,M,27,Parda,Desempregado(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Fi1126,2024,2024-04-17,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Itangua Ii,S,Indiciado,M,25,Parda,Cozinheiro(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Ly9392,2024,2024-09-02,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Jardim São Conrado,S,Indiciado,M,48,Parda,Soldador(A),1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bf1943,2024,2024-01-26,Sorocaba,Ddm Sorocaba,,Ônibus/Lotação/Trolebus,Vila Sao Joao,S,Indiciado,M,46,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Qi8029,2024,2024-11-26,Sorocaba,Ddm Sorocaba,,Casa,Vila Arruda,S,Indiciado,M,45,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Ql4110,2024,2024-11-28,Sorocaba,Ddm Sorocaba,,Casa,Não Informado,S,Indiciado,M,38,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Pe7607,2024,2024-11-04,Sorocaba,Ddm Sorocaba,Tentativa De Homicídio,Casa,Jardim Nilton Torres,S,Indiciado,M,29,Parda,Moto-Boy,Não Informado,Nº De Infratores Presos Em Flagrante
+Nx5637,2024,2024-10-09,Votorantim,Ddm Votorantim,,Casa,Vossoroca,S,Indiciado,M,28,Parda,Catador Material Reciclavel,1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Ae0554,2024,2024-01-04,Sorocaba,Ddm Sorocaba,,Casa,Brigadeiro Tobias,S,Indiciado,M,32,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Lp8354,2024,2024-08-26,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Via Pública,Jardim Sao Conrado,S,Indiciado,M,30,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Lz7543,2024,2024-09-02,Sorocaba,Ddm Sorocaba,,Casa,Jardim Maria Eugenia,S,Indiciado,M,42,Parda,Motorista,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Em6379,2024,2024-04-01,Sorocaba,Ddm Sorocaba,,Casa,Jardim Itapoa,S,Indiciado,M,39,Parda,Desempregado,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Bl9964,2024,2024-01-31,Sorocaba,Ddm Sorocaba,Lesão Corporal Dolosa,Casa,Jardim Ana Maria,S,Indiciado,M,23,Parda,Não Informado,Não Informado,Nº De Infratores Presos Em Flagrante
+Dm0684,2024,2024-03-11,Sorocaba,Ddm Sorocaba,,Casa,Parque Das Laranjeiras,S,Indiciado,M,33,Parda,Pizzaiolo(A),2º Grau Completo,Nº De Infratores Presos Em Flagrante
+Jc7268,2024,2024-07-04,Sorocaba,Ddm Sorocaba,,Ônibus/Lotação/Trolebus,Vila Alcolea,S,Indiciado,M,36,Parda,Vendedor(A) Ambulante,2º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Ei7885,2024,2024-03-28,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,S,Indiciado,M,46,Parda,Motorista,2º Grau Completo,Nº De Infratores Presos Em Flagrante
+No1391,2024,2024-10-02,Sorocaba,Ddm Sorocaba,,Casa,Habiteto,S,Indiciado,M,37,Parda,Desempregado(A),1º Grau Incompleto,Nº De Infratores Presos Em Flagrante
+Dz5201,2024,2024-03-21,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,46,Preta,Ajudante Geral,1º Grau Incompleto,Nº De Infratores Presos Por Mandado
+Of0989,2024,2024-10-15,Votorantim,Ddm Votorantim,,Delegacia,Jardim Icatu,N,Capturado,M,30,Preta,Auxiliar De Marceneiro,2º Grau Completo,Nº De Infratores Presos Por Mandado
+Qm3602,2024,2024-11-29,Sorocaba,Ddm Sorocaba,,Casas,Jardim Flamboyant,S,Indiciado,M,32,Preta,Conferente,Não Informado,Nº De Infratores Presos Em Flagrante
+Fh9031,2024,2024-04-17,Sorocaba,Ddm Sorocaba,,Casa,Jardim Hungares,S,Indiciado,M,25,Preta,Sem Profissao Definida,1º Grau Completo,Nº De Infratores Presos Em Flagrante
+Lg8468,2024,2024-08-19,Sorocaba,Ddm Sorocaba,,Casa,Brigadeiro Tobias,S,Indiciado,M,45,Preta,Auxiliar De Expedicao,2º Grau Completo,Nº De Infratores Presos Em Flagrante
