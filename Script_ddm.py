@@ -11,11 +11,11 @@ import pandas as pd
 from google.cloud import bigquery
 import requests
 import os
+import re
 
 # =============================================
 # ETAPA 1: EXTRAÇÃO
 # =============================================
-
 def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     """
     Recebe uma lista de URLs de arquivos Excel, baixa todos,
@@ -66,6 +66,85 @@ def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
 
 
 # =============================================
+# ### FUNÇÃO DE NORMALIZAÇÃO
+# =============================================
+
+def normalizar_bairros(series_bairros):
+    """
+    Recebe uma Series (coluna) do pandas e aplica uma normalização
+    completa para nomes de bairros, em duas etapas.
+    """
+
+    # 1. Garante que é string e converte para minúsculo
+    col_norm = series_bairros.astype(str).str.lower()
+
+    # 2. Remove Acentos (ex: "vila antônia" -> "vila antonia")
+    col_norm = col_norm.str.normalize('NFKD') \
+                       .str.encode('ascii', errors='ignore') \
+                       .str.decode('utf-8')
+
+    # 3. Remove pontuações (substitui por espaço)
+    col_norm = col_norm.str.replace(r'[^a-z0-9\s]', ' ', regex=True)
+
+    # 4. Limpa espaços duplos (importante fazer antes dos mapeamentos)
+    col_norm = col_norm.str.replace(r'\s+', ' ', regex=True).str.strip()
+
+    # 5. Mapeamento - ETAPA 1: ABREVIAÇÕES (troca pedaços)
+    map_abreviacoes = {
+        r'\bjd\b': 'jardim',
+        r'\bjard\b': 'jardim',
+        r'\bvl\b': 'vila',
+        r'\bpq\b': 'parque',
+        r'\bprq\b': 'parque',
+        r'\bcent\b': 'centro',
+        r'\bcaguassu\b': 'caguacu'
+    }
+
+    # O Pandas permite aplicar o dicionário de replace de uma vez só
+    col_norm = col_norm.replace(map_abreviacoes, regex=True)
+
+    # 6. Mapeamento - ETAPA 2: CORREÇÕES TOTAIS (troca a string inteira)
+    # Usamos ^ (início) e $ (fim) para garantir que trocamos
+    # apenas se a string inteira for EXATAMENTE o que procuramos.
+    map_correcoes_totais = {
+        r'^\s*b funda\s*$': 'barra funda',
+        r'^\s*bairro barra funda\s*$': 'barra funda',
+        r'^\s*morros\s*$': 'bairro dos morros',
+        r'^\s*bairro jacutinga\s*$': 'jacutinga',
+        r'^\s*bairro rio acima\s*$': 'rio acima',
+        r'^\s*cajuru\s*$': 'cajuru do sul',
+        r'^\s*campolim\s*$': 'parque campolim',
+        r'^\s*central parque sorocaba\s*$': 'central parque',
+        r'^\s*conjunto habitacional julio de mesquita\s*$': 'julio de mesquita filho',
+        r'^\s*julio de mesquita\s*$': 'julio de mesquita filho',
+        r'^\s*guaiba\s*$': 'jardim guaiba',
+        r'^\s*jardim archila\s*$': 'jardim archilla',
+        r'^\s*jardim magnolias\s*$': 'jardim magnolia',
+        r'^\s*jardim nikey\s*$': 'jardim nikkey',
+        r'^\s*jardim nikkei\s*$': 'jardim nikkey',
+        r'^\s*jatai\s*$': 'parque jatai',
+        r'^\s*nilton torres\s*$': 'jardim nilton torres',
+        r'^\s*wanel ville\s*$': 'jardim wanel ville',
+        r'^\s*zacarias\s*$': 'vila zacarias',
+        r'^\s*votocel\s*$': 'vila votocel',
+        
+        # Regra para garantir que o bairro já certo permaneça
+        r'^\s*barra funda\s*$': 'barra funda',
+        r'^\s*nao informado\s*$': 'nao informado' # Garante o "Não Informado"
+    }
+    
+    col_norm = col_norm.replace(map_correcoes_totais, regex=True)
+
+    # 7. Limpeza Final (remove espaços duplos e no início/fim de novo)
+    # Isso garante que as trocas não criaram espaços extras
+    col_norm = col_norm.str.replace(r'\s+', ' ', regex=True).str.strip()
+
+    # Se a string ficar vazia após a limpeza, volta "nao informado"
+    col_norm = col_norm.replace(r'^\s*$', 'nao informado', regex=True)
+
+    return col_norm
+
+# =============================================
 # ETAPA 2: TRANSFORMAÇÃO
 # =============================================
 
@@ -93,6 +172,10 @@ def transformar_dados(df):
     for coluna in colunas_para_preencher:
         df_filtrado[coluna] = df_filtrado[coluna].fillna('Não Informado')
 
+    print("\nIniciando normalização de bairros...")
+    df_filtrado['BAIRRO'] = normalizar_bairros(df_filtrado['BAIRRO'])
+    print("Normalização de bairros concluída.")
+
     df_filtrado['MES_OCORRENCIA'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.month
 
     df_filtrado['DIA_SEMANA_EN'] = df_filtrado['DATA_OCORRENCIA_BO'].dt.day_name()
@@ -103,7 +186,6 @@ def transformar_dados(df):
     df_filtrado['DIA_SEMANA'] = df_filtrado['DIA_SEMANA_EN'].map(mapa_dias)
     df_filtrado.drop(columns=['DIA_SEMANA_EN'], inplace=True)
 
-    # --- RENOMEAR COLUNAS ---
     mapa_renomear = {
         'NUM_BO': 'codigo_bo',
         'NOME_MUNICIPIO': 'nome_municipio',
@@ -124,7 +206,6 @@ def transformar_dados(df):
     }
     df_renomeado = df_filtrado.rename(columns=mapa_renomear)
 
-    # --- FORMATAR TEXTOS PARA "Title Case" ---
     colunas_texto = df_renomeado.select_dtypes(include=['object']).columns
     for coluna in colunas_texto:
         # Pula a coluna de hora para não convertê-la em texto
@@ -183,7 +264,6 @@ def transformar_dados(df):
 # =============================================
 # ETAPA 3: CARGA PARA O GOOGLE BIGQUERY
 # =============================================
-
 def carregar_dados_bigquery(df, project_id, table_id, schema):
     """
     Função para carregar um DataFrame do Pandas em uma tabela do BigQuery
@@ -214,7 +294,6 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
 # =============================================
 # --- DEFINIÇÃO DO SCHEMA PARA O BIGQUERY ---
 # =============================================
-
 schema_definido = [
     bigquery.SchemaField("codigo_bo", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("nome_municipio", "STRING", mode="NULLABLE"),
@@ -266,7 +345,6 @@ def encontrar_valores_nao_numericos(df, colunas):
 # =============================================
 # --- ROTEIRO PRINCIPAL COM DEBUG ---
 # =============================================
-
 # Lista manual com as URLs diretas para os arquivos
 LINKS_DAS_PLANILHAS = [
     'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2022.xlsx',
