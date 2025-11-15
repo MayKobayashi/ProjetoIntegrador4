@@ -16,6 +16,7 @@ import re
 # =============================================
 # ETAPA 1: EXTRAÇÃO
 # =============================================
+
 def extrair_e_consolidar_dados(lista_de_links, pasta_downloads='downloads'):
     """
     Recebe uma lista de URLs de arquivos Excel, baixa todos,
@@ -144,6 +145,7 @@ def normalizar_bairros(series_bairros):
 
     return col_norm
 
+
 # =============================================
 # ETAPA 2: TRANSFORMAÇÃO
 # =============================================
@@ -264,6 +266,7 @@ def transformar_dados(df):
 # =============================================
 # ETAPA 3: CARGA PARA O GOOGLE BIGQUERY
 # =============================================
+
 def carregar_dados_bigquery(df, project_id, table_id, schema):
     """
     Função para carregar um DataFrame do Pandas em uma tabela do BigQuery
@@ -294,6 +297,7 @@ def carregar_dados_bigquery(df, project_id, table_id, schema):
 # =============================================
 # --- DEFINIÇÃO DO SCHEMA PARA O BIGQUERY ---
 # =============================================
+
 schema_definido = [
     bigquery.SchemaField("codigo_bo", "STRING", mode="NULLABLE"),
     bigquery.SchemaField("nome_municipio", "STRING", mode="NULLABLE"),
@@ -317,6 +321,7 @@ schema_definido = [
 # =============================================
 # --- FUNÇÃO DE DEBUG ---
 # =============================================
+
 def encontrar_valores_nao_numericos(df, colunas):
     """
     Verifica uma lista de colunas em um DataFrame e imprime os valores
@@ -345,6 +350,7 @@ def encontrar_valores_nao_numericos(df, colunas):
 # =============================================
 # --- ROTEIRO PRINCIPAL COM DEBUG ---
 # =============================================
+
 # Lista manual com as URLs diretas para os arquivos
 LINKS_DAS_PLANILHAS = [
     'https://www.ssp.sp.gov.br/assets/estatistica/transparencia/spDados/SPDadosCriminais_2022.xlsx',
